@@ -4,14 +4,23 @@ Spyder Editor
 
 This is a temporary script file.
 """
-#直接寫法
-drive = input("你有開過車嗎？(y/n)")
+#判斷寫法
 
-if drive == 'y':
-    age_y = input("請問年齡？")
-    if int(age_y) < 18:
-        print('你騙人')
+drive = input("你有開車嗎？(y/n)")
+if drive != 'y' and drive != 'n':
+    print('輸入錯誤')
+    #可在這裡寫 raise SystemExit 做中斷程式
+elif drive == 'y':
+    age = input("請問年齡？")
+    age = int(age)
+    if age < 18:
+        print('你無照喔')
     else:
-        print('你也許開過')
-else:
-    print('瞭解你不會開車')
+        print('所以你有駕照')
+elif drive == 'n':
+    age = input("請問年齡？")
+    age = int(age)
+    if age < 18:
+        print('那就等到成年在考駕照')
+    else:
+        print('有空去考個駕照喔')
